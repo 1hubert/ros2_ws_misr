@@ -20,7 +20,7 @@ If you use Windows switch to [**Windows branch**]().
 Open Terminal and paste command below:
 
 ```bash
-cd ~ && git clone -b jazzy https://github.com/LRMPUT/ros2_ws_misr.git && xhost + && code ros2_ws_misr
+cd ~ && [ ! -d ros2_ws_misr ] && git clone -b jazzy https://github.com/LRMPUT/ros2_ws_misr.git ; xhost + && code ros2_ws_misr
 ```
 
 - In VS Code press `F1`
