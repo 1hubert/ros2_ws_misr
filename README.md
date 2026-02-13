@@ -4,7 +4,7 @@ ROS 2 workspace template for Docker with VSCode
 
 ### This is version for **Ubuntu OS**. 
 
-If you use Windows switch to [**Windows branch**]().
+If you use Windows switch to [**Windows branch**](https://github.com/LRMPUT/ros2_ws_misr/tree/jazzy-Windows).
 
 
 ## Initial setup
@@ -23,9 +23,10 @@ Open Terminal and paste command below:
 cd ~ && [ ! -d ros2_ws_misr ] && git clone -b jazzy https://github.com/LRMPUT/ros2_ws_misr.git ; xhost + && code ros2_ws_misr
 ```
 
-- In VS Code press `F1`
-- Type "Reopen in...", select `"Dev Containers: Rebuild and Reopen in Container"`, click Enter
-- Wait for the container to setup
+In VS Code:
+- press button in the notification (bottom-right corner of the screen) `"Reopen in Container"`
+- OR press `F1` and type "Reopen in...", select `"Dev Containers: Rebuild and Reopen in Container"`, click Enter
+- Wait for the container to set up
 
 ## Setup ROS packages for class
 
