@@ -1,0 +1,57 @@
+{
+    "name": "ROS Jazzy Dev Container",
+    "privileged": true,
+    "remoteUser": "${localEnv:USERNAME}",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            "USERNAME": "${localEnv:USERNAME}"
+        }
+    },
+    "workspaceFolder": "/home/${localEnv:USERNAME}/ros2_ws",
+    "workspaceMount": "source=${localWorkspaceFolder}/src,target=/home/${localEnv:USERNAME}/ros2_ws/src,type=bind",
+    "customizations": {
+        "vscode": {
+            "extensions":[
+                "donjayamanne.python-extension-pack",
+                "eamodio.gitlens",
+                "ranch-hand-robotics.rde-pack",
+                "ms-python.python"
+            ],
+            "settings": {
+            	"terminal.integrated.shell.linux": "/bin/bash",
+            	"python.defaultInterpreterPath": "/usr/bin/python3",
+                "python.analysis.extraPaths": [
+                    "/opt/ros/jazzy/lib/python3.12/site-packages",
+                    "/opt/ros/jazzy/local/lib/python3.12/dist-packages",
+                    "${containerWorkspaceFolder}/install/pilz_robot_programming/lib/python3.12/site-packages"
+
+                ],
+                "python.autoComplete.extraPaths": [
+                    "/opt/ros/jazzy/lib/python3.12/site-packages",
+                    "/opt/ros/jazzy/local/lib/python3.12/dist-packages",
+                    "${containerWorkspaceFolder}/install/pilz_robot_programming/lib/python3.12/site-packages"
+                ]
+            }
+        }
+    },
+    "containerEnv": {
+        "DISPLAY": "unix:0",
+        "ROS_DOMAIN_ID": "42",
+        "ROS_AUTOMATIC_DISCOVERY_RANGE": "LOCALHOST",
+        "ROS_DISTRO": "jazzy"
+      },
+    "runArgs": [
+        "--name=ros2_misr_dev_cnt",
+        "--net=host",
+        "--pid=host",
+        "--ipc=host",
+        // "--gpus=all",  // Uncomment if you want to use GPU acceleration
+        "-e", "DISPLAY=${env:DISPLAY}"
+    ],
+    "mounts": [
+        "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached",
+        "source=/dev/dri,target=/dev/dri,type=bind,consistency=cached"
+    ],
+    "postCreateCommand": "sudo chown -R $(whoami) /home/${localEnv:USERNAME}/ros2_ws/"
+}
