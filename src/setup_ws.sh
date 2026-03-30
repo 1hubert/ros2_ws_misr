@@ -7,4 +7,4 @@ source /opt/ros/jazzy/setup.bash
 rosdep update --rosdistro jazzy
 rosdep install --from-paths src --ignore-src -y
 
-# colcon build --symlink-install
+colcon build --symlink-install
