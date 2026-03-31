@@ -20,7 +20,7 @@ If you use Windows switch to [**Windows branch**](https://github.com/LRMPUT/ros2
 Open Terminal and paste command below:
 
 ```bash
-cd ~ && (test -d ros2_ws_misr/.git && git -C ros2_ws_misr pull || git clone -b jazzy https://github.com/LRMPUT/ros2_ws_misr.git) && xhost +local: && code ros2_ws_misr
+test -d ~/ros2_ws_misr/.git && (cd ~/ros2_ws_misr && git fetch && git reset --hard origin/jazzy) || (cd ~ && git clone -b jazzy https://github.com/LRMPUT/ros2_ws_misr.git) && xhost +local: && code ~/ros2_ws_misr
 ```
 
 In VS Code:
