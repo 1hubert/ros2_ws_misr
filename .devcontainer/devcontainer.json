@@ -53,5 +53,5 @@
         "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached",
         "source=/dev/dri,target=/dev/dri,type=bind,consistency=cached"
     ],
-    "postCreateCommand": "sudo chown -R $(whoami) /home/${localEnv:USERNAME}/ros2_ws/"
+    "postCreateCommand": "sudo chown -R $(whoami) /home/${localEnv:USERNAME}/ros2_ws/ && ./src/setup_ws.sh"
 }
