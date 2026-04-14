@@ -19,6 +19,7 @@ RUN groupadd --gid $USER_GID $USERNAME \
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y --allow-unauthenticated build-essential git
 RUN apt-get install -y --allow-unauthenticated python3-pip python3-setuptools python3-wheel python3-rosdep python3-colcon-common-extensions python3-psutil
+RUN apt-get install -y --allow-unauthenticated ros-jazzy-rmw-cyclonedds-cpp
 
 RUN echo "export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '" >> /home/$USERNAME/.bashrc
 
