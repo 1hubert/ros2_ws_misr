@@ -17,6 +17,7 @@ RUN groupadd --gid $USER_GID $USERNAME \
 
 
 RUN apt-get update && apt-get upgrade -y
+RUN apt-get update --fix-missing
 RUN apt-get install -y --allow-unauthenticated build-essential git
 RUN apt-get install -y --allow-unauthenticated python3-pip python3-setuptools python3-wheel python3-rosdep python3-colcon-common-extensions python3-psutil
 RUN apt-get install -y --allow-unauthenticated ros-jazzy-rmw-cyclonedds-cpp
