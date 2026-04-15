@@ -9,12 +9,6 @@ ROS 2 workspace template for Docker with VSCode
 
 ## Clone the repository and open in VS Code
 
-Open Terminal and paste command below:
-
-```bash
-test -d ~/ros2_ws_misr/.git && (cd ~/ros2_ws_misr && git fetch && git reset --hard origin/jazzy) || (cd ~ && git clone -b jazzy https://github.com/LRMPUT/ros2_ws_misr.git) && xhost +local: && code ~/ros2_ws_misr
-```
-
 In VS Code:
 - press button in the notification (bottom-right corner of the screen) `"Reopen in Container"`
 - OR press `F1` and type "Reopen in...", select `"Dev Containers: Rebuild and Reopen in Container"`, click Enter
