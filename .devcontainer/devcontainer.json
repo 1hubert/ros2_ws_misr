@@ -1,15 +1,15 @@
 {
     "name": "ROS Jazzy Dev Container",
     "privileged": true,
-    "remoteUser": "${localEnv:USERNAME}",
-    "build": {
-        "dockerfile": "Dockerfile",
-        "args": {
-            "USERNAME": "${localEnv:USERNAME}"
-        }
-    },
-    "workspaceFolder": "/home/${localEnv:USERNAME}/ros2_ws",
-    "workspaceMount": "source=${localWorkspaceFolder}/src,target=/home/${localEnv:USERNAME}/ros2_ws/src,type=bind",
+    "remoteUser": "${localEnv:USER}",
+        "build": {
+            "dockerfile": "Dockerfile",
+            "args": {
+                "USERNAME": "${localEnv:USER}"
+            }
+        },
+    "workspaceFolder": "/home/${localEnv:USER}/ros2_ws",
+    "workspaceMount": "source=${localWorkspaceFolder}/src,target=/home/${localEnv:USER}/ros2_ws/src,type=bind",
     "customizations": {
         "vscode": {
             "extensions":[
@@ -45,5 +45,5 @@
     "runArgs": [
         "--name=ros2_misr_dev_cnt"
     ],
-    "postCreateCommand": "sudo chown -R $(whoami) /home/${localEnv:USERNAME}/ros2_ws/ && ./src/setup_ws.sh"
+    "postCreateCommand": "sudo chown -R $(whoami) /home/${localEnv:USER}/ros2_ws/ && ./src/setup_ws.sh"
 }
