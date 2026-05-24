@@ -39,3 +39,9 @@ Source environment:
 ```bash
 source install/setup.bash
 ```
+
+When opening a new terminal, you must always run the following command before you begin working:
+```bash
+source /opt/ros/jazzy/setup.bash
+```
+This command tells child processes where ROS is installed and sets the required environment variables—simply put, it enables you to use ROS.
